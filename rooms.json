@@ -1,0 +1,232 @@
+{
+  "moods": {
+    "night-shift": {
+      "wash": "#0a1630",
+      "lights": [
+        "star",
+        "#3f7fd8",
+        "#f1b765"
+      ],
+      "pace": 0.5,
+      "glow": 0.5
+    },
+    "small-hours": {
+      "wash": "#070b1c",
+      "lights": [
+        "star",
+        "#4a5fd0"
+      ],
+      "pace": 0.25,
+      "glow": 0.4
+    },
+    "afternoon": {
+      "wash": "#221b26",
+      "lights": [
+        "#f6cf8f",
+        "star",
+        "#e9a08a"
+      ],
+      "pace": 0.6,
+      "glow": 0.6
+    },
+    "vigil": {
+      "wash": "#170f1c",
+      "lights": [
+        "#e0a070",
+        "star",
+        "#b76a8a"
+      ],
+      "pace": 0.2,
+      "glow": 0.45
+    }
+  },
+  "settings": {
+    "targetSecondsPerRoom": 75,
+    "choiceKeys": [
+      "A",
+      "B",
+      "C"
+    ],
+    "enterRequiresSecondPress": true,
+    "escReturnsToSky": true
+  },
+  "rooms": [
+    {
+      "id": "room-nursing",
+      "star": "def-nursing",
+      "tourStop": 2,
+      "title": "Ninety Seconds",
+      "mood": "night-shift",
+      "setting": "Night shift, 21:04. A step-down room. The 21:00 meds are due.",
+      "beats": [
+        {
+          "t": "21:04",
+          "text": "The nurse scans the patient's wristband and the antibiotic."
+        },
+        {
+          "t": "21:04",
+          "text": "While the scanner beeps, she notices his words are coming a half-beat slower than they did at 19:00."
+        },
+        {
+          "t": "21:05",
+          "text": "She frees the oxygen tubing kinked under his arm."
+        },
+        {
+          "t": "21:05",
+          "text": "His daughter's hands are shaking. The nurse asks if she's eaten today. She hasn't."
+        },
+        {
+          "t": "21:06",
+          "text": "She hangs the antibiotic, checks the IV site and leaves."
+        }
+      ],
+      "prompt": "What did the nurse just do?",
+      "choices": {
+        "A": {
+          "label": "Gave a medication",
+          "outcome": "Yes. That's the part the chart shows: one barcode scan at 21:04."
+        },
+        "B": {
+          "label": "Assessed his neuro status",
+          "outcome": "Yes. She caught a subtle change. No field was opened. It lives only in her head until it gets worse."
+        },
+        "C": {
+          "label": "Cared for his family",
+          "outcome": "Yes. She noticed the daughter hadn't eaten. There's nowhere to chart that."
+        }
+      },
+      "reveal": "All three. The record shows one.",
+      "closing": {
+        "fromStar": "def-nursing"
+      }
+    },
+    {
+      "id": "room-before-recorded",
+      "star": "a1",
+      "tourStop": 5,
+      "title": "03:10",
+      "mood": "small-hours",
+      "setting": "03:10. A patient recovering from abdominal surgery. The nurse has four other patients.",
+      "beats": [
+        {
+          "t": "03:10",
+          "text": "His breathing is faster and shallower than an hour ago. He's using his shoulders to breathe."
+        },
+        {
+          "t": "03:11",
+          "text": "His SpO2 still reads 94%. Nothing has alarmed."
+        },
+        {
+          "t": "03:12",
+          "text": "She raises the head of the bed, splints his incision with a pillow and coaches him through slow breaths."
+        }
+      ],
+      "prompt": "It's 03:15. Four other patients. What does she do?",
+      "choices": {
+        "A": {
+          "label": "Stay with him",
+          "outcome": "By 03:25 he's settled. At 05:45 she charts routine vitals: RR 20, SpO2 95%. Fifteen minutes at the bedside left no trace."
+        },
+        "B": {
+          "label": "Chart it now",
+          "outcome": "The record gets an accurate entry at 03:16. He gets four fewer minutes of her coaching. The chart improved. Did the care?"
+        },
+        "C": {
+          "label": "Call a rapid response",
+          "outcome": "The team arrives at 03:22. He's already better. The record shows a rapid response call, not the nursing that came before it."
+        }
+      },
+      "reveal": "Every path is good care. Each leaves a different trace, or none.",
+      "closing": {
+        "fromStar": "a1"
+      }
+    },
+    {
+      "id": "room-not-neutral",
+      "star": "a2",
+      "tourStop": 11,
+      "title": "He's Not Himself",
+      "mood": "afternoon",
+      "setting": "14:30. Medical floor. Routine afternoon assessment.",
+      "beats": [
+        {
+          "t": "14:30",
+          "text": "He knows his name, where he is, the date and why he's here."
+        },
+        {
+          "t": "14:31",
+          "text": "His wife pulls the nurse aside: \"He's not himself today. He'd never be this quiet.\""
+        },
+        {
+          "t": "14:32",
+          "text": "His vitals are in normal range. The nurse opens the flowsheet."
+        }
+      ],
+      "prompt": "Which box captures what his wife just said?",
+      "choices": {
+        "A": {
+          "label": "Neuro: Alert & oriented x4 ☑",
+          "outcome": "True. And it says he's fine."
+        },
+        "B": {
+          "label": "Behavior: Calm, cooperative ☑",
+          "outcome": "Also true. It records his quiet as a good thing."
+        },
+        "C": {
+          "label": "Family concern: free-text comment",
+          "outcome": "Closest. But free text is often the part structured reports and models skip."
+        }
+      },
+      "reveal": "20:40: his heart rate and temperature climb, and the sepsis alert fires. The earliest signal was his wife's sentence, six hours before.",
+      "gestureLink": "Use the Phase 7 'chart it' compression on the chosen box, so the wife's sentence visibly flattens into the checkbox.",
+      "flatten": {
+        "beat": 2
+      },
+      "closing": {
+        "fromStar": "a2"
+      }
+    },
+    {
+      "id": "room-plural",
+      "star": "a6",
+      "tourStop": 14,
+      "title": "Third Night",
+      "mood": "vigil",
+      "setting": "Comfort care. The nurse's third night in a row with this patient.",
+      "beats": [
+        {
+          "t": "01:50",
+          "text": "His breathing has slowed to 8, with long pauses. His knees are mottled."
+        },
+        {
+          "t": "01:52",
+          "text": "On her first night, she learned he settles when she hums the hymn his late wife used to sing. She hums it now. His face softens."
+        },
+        {
+          "t": "01:55",
+          "text": "His son is 10 minutes away. She asks the resident to hold the family call until he arrives, so he can hear it in the room."
+        }
+      ],
+      "prompt": "Which of these can she chart?",
+      "choices": {
+        "A": {
+          "label": "RR 8 with apneic pauses, mottled knees",
+          "outcome": "There's a field for that. Empirical knowing, recorded."
+        },
+        "B": {
+          "label": "He settles to his wife's hymn",
+          "outcome": "No field. Personal and aesthetic knowing becomes dark matter."
+        },
+        "C": {
+          "label": "She held the call for his son",
+          "outcome": "No field. Ethical knowing becomes dark matter."
+        }
+      },
+      "reveal": "Only one kind of knowing has a home in the record. Unchosen options drift into the dark matter layer.",
+      "toDarkMatter": "unchosen",
+      "closing": {
+        "fromStar": "a6"
+      }
+    }
+  ]
+}

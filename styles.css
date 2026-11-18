@@ -1,0 +1,201 @@
+/* The page furniture around the sky: title, buttons, reading panel, tour bar.
+   High contrast on purpose: near-black panels, warm white text, a gold focus ring you cannot miss. */
+:root {
+  --bg: #05070d;
+  --board: #090c13;
+  --text: #f6f3ea;
+  --soft: #c9d2e6;
+  --gold: #f6cf8f;
+  --edge: rgba(246, 207, 143, 0.4);
+  --panel-scale: 1;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Noto Serif", serif;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); overflow: hidden; }
+#sky { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+[hidden] { display: none !important; }
+
+button {
+  font: 600 1rem/1 var(--sans); color: var(--text); background: rgba(9, 12, 19, 0.9);
+  border: 1.5px solid rgba(201, 210, 230, 0.45); border-radius: 10px; min-height: 44px; padding: 0 16px; cursor: pointer; white-space: nowrap;
+}
+button:hover { border-color: var(--gold); color: var(--gold); }
+button:disabled { opacity: 0.45; cursor: default; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+kbd { font: 600 0.9em var(--sans); border: 1px solid var(--soft); border-radius: 5px; padding: 1px 7px; white-space: nowrap; }
+
+.topbar { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 16px 20px; pointer-events: none; }
+.topbar > * { pointer-events: auto; }
+.title h1 { font: 700 1.6rem/1.15 var(--serif); margin: 0; text-shadow: 0 2px 12px #000; }
+.title p { margin: 4px 0 0; color: var(--soft); font-size: 1rem; text-shadow: 0 2px 10px #000; }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+#btn-vr { border-color: var(--gold); color: var(--gold); }
+
+.drawer {
+  position: fixed; top: 84px; left: 20px; bottom: 96px; width: min(340px, calc(100vw - 40px)); overflow: auto;
+  background: var(--board); border: 1.5px solid var(--edge); border-radius: 14px; padding: 8px 14px 16px;
+}
+.drawer h2 { font: 700 0.85rem var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 18px 4px 6px; }
+.drawer ul { list-style: none; margin: 0; padding: 0; }
+.drawer button { white-space: normal; width: 100%; text-align: left; border-color: transparent; background: none; font-weight: 500; line-height: 1.3; padding: 8px 10px; min-height: 40px; }
+.drawer button[aria-current="true"] { border-color: var(--gold); color: var(--gold); }
+
+.panel {
+  position: fixed; top: 84px; right: 20px; bottom: 96px; width: min(460px, 42vw); overflow: auto;
+  background: var(--board); border: 1.5px solid var(--edge); border-radius: 16px; padding: 28px 30px 30px;
+  font-size: calc(1.22rem * var(--panel-scale)); line-height: 1.58;
+}
+.panel .close { position: sticky; top: 0; float: right; margin: -12px -14px 0 12px; width: 44px; padding: 0; }
+.panel .kicker { font: 700 0.72em var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin: 0 0 8px; }
+.panel h2 { font: 700 1.62em/1.14 var(--serif); margin: 0 0 14px; }
+.panel h2:focus { outline: none; }
+.panel .subtitle { font-style: italic; color: var(--soft); margin: -6px 0 14px; }
+.panel p { margin: 0 0 0.9em; }
+.panel h3 { font: 700 0.72em var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin: 1.6em 0 0.5em; }
+.panel ul { margin: 0; padding: 0; list-style: none; }
+.panel .links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.panel .links button { white-space: normal; font-size: 0.82em; min-height: 40px; padding: 6px 12px; line-height: 1.25; text-align: left; }
+.panel .links .arrow { color: var(--gold); }
+.panel .sources li { font-size: 0.8em; line-height: 1.5; color: var(--text); margin-bottom: 0.8em; padding-left: 1.6em; text-indent: -1.6em; overflow-wrap: anywhere; }
+.panel .sources button { all: unset; cursor: pointer; text-indent: 0; }
+.panel .sources button:hover { color: var(--gold); }
+.panel .sources button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.panel .citation { overflow-wrap: anywhere; }
+.panel a { color: var(--gold); }
+
+.tourbar {
+  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); display: flex; align-items: center; gap: 14px;
+  background: var(--board); border: 1.5px solid var(--edge); border-radius: 14px; padding: 8px; max-width: calc(100vw - 24px);
+}
+.tourbar p { margin: 0; padding: 0 8px; min-width: 14ch; text-align: center; font-size: 1.05rem; }
+.tourbar .step { color: var(--gold); font-weight: 700; margin-right: 0.5em; white-space: nowrap; }
+
+.help {
+  position: fixed; top: 84px; left: 50%; transform: translateX(-50%); width: min(620px, calc(100vw - 32px)); max-height: calc(100vh - 190px); overflow: auto;
+  background: var(--board); border: 1.5px solid var(--edge); border-radius: 16px; padding: 22px 28px; font-size: 1.08rem; line-height: 1.5; z-index: 5;
+}
+.help h2 { font: 700 1.4rem var(--serif); margin: 0 0 12px; }
+.help dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 18px; margin: 0 0 16px; }
+.help dt { color: var(--gold); font-weight: 600; }
+.help dd { margin: 0; }
+.fine { color: var(--soft); font-size: 0.95rem; }
+
+.notice {
+  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(680px, calc(100vw - 32px)); max-height: 80vh; overflow: auto;
+  background: var(--board); border: 2px solid var(--gold); border-radius: 16px; padding: 24px 28px; font-size: 1.15rem; line-height: 1.55; z-index: 10;
+}
+.notice.warning { top: auto; bottom: 96px; transform: translateX(-50%); font-size: 1rem; }
+.notice h2 { font: 700 1.3rem var(--serif); margin: 0 0 10px; color: var(--gold); }
+.notice ul { margin: 0 0 14px; padding-left: 1.2em; }
+
+/* U key: a clean stage for the talk. The reading panel and tour bar stay. */
+body.stage .topbar, body.stage .drawer, body.stage .help { display: none; }
+
+@media (max-width: 860px) {
+  .topbar { flex-direction: column; gap: 8px; padding: 12px; }
+  .title h1 { font-size: 1.1rem; }
+  .title p { display: none; }
+  .tools { justify-content: flex-start; }
+  .drawer { top: 132px; left: 12px; }
+  .tourbar p { min-width: 0; }
+  .panel { top: auto; left: 12px; right: 12px; bottom: 88px; width: auto; max-height: 52vh; padding: 20px 22px; }
+  .tourbar p { font-size: 0.95rem; }
+}
+@media (prefers-contrast: more) {
+  :root { --text: #ffffff; --soft: #e6ebf5; --board: #000000; --edge: #f6cf8f; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* A switch that is on (dark matter showing) is marked by a gold edge and a tick, never by colour alone. */
+.tools button[aria-pressed="true"] { border-color: #f5c680; }
+.tools button[aria-pressed="true"]::before { content: "✓ "; }
+
+/* "Chart it": the rich description beside the one line the record would hold. */
+.chart-card { margin: 14px 0; }
+.chart-toggle { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--gold); background: transparent; color: inherit; cursor: pointer; }
+.chart-toggle[aria-pressed="true"]::before { content: "✓ "; }
+.chart-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+.chart-pair h3 { margin: 0 0 4px; }
+.chart-pair p { margin: 0; }
+.chart-before, .chart-after { border-radius: 8px; padding: 10px; border: 1px solid rgba(196, 204, 255, 0.35); }
+.chart-after { background: #1a1c24; border-color: #cfd2da; }
+.chart-field { font-family: ui-monospace, Menlo, Consolas, monospace; color: #fff; }
+
+/* The record's line fades in once the star has finished draining. No fade for people who have asked for less motion. */
+.chart-after { animation: chart-in 0.9s ease both; }
+@keyframes chart-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .chart-after { animation: none; } }
+
+/* ---- The rooms ("step inside a star"). Large and high contrast: it has to read from the back of a classroom. ---- */
+.doors { display: grid; gap: 8px; justify-items: start; margin: 14px 0 4px; }
+.step-inside { border-color: var(--gold); color: var(--gold); white-space: normal; text-align: left; min-height: 44px; padding: 8px 16px; line-height: 1.25; }
+.step-inside::before { content: "▸ "; }
+body.in-room .topbar, body.in-room .tourbar, body.in-room .drawer, body.in-room .help { visibility: hidden; }
+.room { position: fixed; inset: 0; z-index: 30; display: grid; overflow: auto; padding: 28px;
+  background: rgba(5, 7, 13, 0.84); opacity: 0; transition: opacity 1.2s ease; --room: var(--gold); }
+.room.open { opacity: 1; }
+/* With the atmosphere switch on, the room's colour and lights show round the words. The words keep a dark
+   backing (--lit-back: how solid it is; the self-test works the text contrast out from that number). The backing
+   is a column behind the text, feathered at its sides, and it only reaches as far down as the newest line
+   (--lit-bottom, set by rooms-dom.js), so the colour is fullest when a room opens and the dark follows the words
+   down the screen. Nothing here changes the size or place of the words. */
+@property --lit-bottom { syntax: "<length>"; inherits: true; initial-value: 4000px; }
+.room.lit { --lit-back: 0.72; --lit-edge: 0.08; --lit-half: calc(min(520px, 50% - 28px) + 30px);
+  --lit-column: rgb(5 7 13 / calc((var(--lit-back) - var(--lit-edge)) / (1 - var(--lit-edge))));
+  background: rgb(5 7 13 / var(--lit-edge)); transition: opacity 1.2s ease, --lit-bottom 0.9s ease; }
+.room.lit::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, transparent calc(50% - var(--lit-half) - 150px), var(--lit-column) calc(50% - var(--lit-half)),
+    var(--lit-column) calc(50% + var(--lit-half)), transparent calc(50% + var(--lit-half) + 150px));
+  -webkit-mask-image: linear-gradient(180deg, #000 calc(var(--lit-bottom) + 28px), transparent calc(var(--lit-bottom) + 190px));
+  mask-image: linear-gradient(180deg, #000 calc(var(--lit-bottom) + 28px), transparent calc(var(--lit-bottom) + 190px)); }
+/* The text is sized to the window, in both directions, so a whole room fits on one screen without scrolling.
+   The card hangs from the top, so each new line appears below the last and nothing already on show moves. */
+.room-card { width: min(1040px, 100%); margin: 0 auto; font-size: calc(clamp(1.05rem, min(1.75vw, 2.55vh), 1.7rem) * var(--fit, 1)); line-height: 1.42; }
+/* Once the class has chosen, the earlier beats step back (smaller and dimmer) to leave room for what follows. */
+.room-card.decided .room-beats { font-size: 0.74em; opacity: 0.62; }
+.room-beats { transition: opacity 0.9s ease; }
+.room-kicker { margin: 0 0 6px; font-size: 0.72em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--room); }
+.room-title { margin: 0 0 10px; font: 700 2em/1.12 var(--serif); }
+.room-title:focus-visible { outline-offset: 6px; }
+.room-setting { margin: 0 0 18px; color: var(--soft); font-style: italic; }
+.room-beats { list-style: none; margin: 0 0 18px; padding: 0; }
+.room-beat { display: flex; gap: 16px; margin: 0 0 10px; transform-origin: left center;
+  transition: opacity 2s ease, filter 2s ease, transform 2s ease; }
+.room-time { flex: none; min-width: 3.6em; color: var(--room); font-variant-numeric: tabular-nums; font-weight: 600; }
+/* The line that flattens into the chosen box: its colour and size drain over two seconds, like a charted star. */
+.room-beat.flattened { opacity: 0.34; filter: grayscale(1); transform: scale(0.86); }
+.room-prompt { margin: 0 0 6px; font-weight: 700; color: var(--room); }
+.room-waiting { margin: 0 0 10px; font-size: 0.8em; color: var(--soft); }
+.room-choices { display: grid; gap: 12px; margin: 0 0 18px; }
+.room-choice { display: flex; align-items: center; gap: 18px; width: 100%; min-height: 64px; padding: 12px 18px; white-space: normal;
+  text-align: left; font: 600 1em/1.3 var(--sans); border-width: 2px; transition: opacity 2s ease, transform 2s ease, border-color 0.3s ease; }
+.room-letter { flex: none; width: 2em; height: 2em; border-radius: 50%; display: grid; place-items: center;
+  background: var(--room); color: #10131d; font-weight: 800; }
+.room-choice:disabled { opacity: 1; }
+.room-choice.chosen { border-color: var(--room); border-width: 3px; background: #171b29; }
+.room-choice.chosen .room-label::after { content: "  ✓"; color: var(--room); }
+.room-choice.other { opacity: 0.5; }
+/* No field in the record for this one: it thins out and lifts away, toward the dark matter. */
+.room-choice.drifting { opacity: 0.22; transform: translateY(-8px); border-style: dashed; }
+.room-chose { margin: 0 0 4px; font-size: 0.72em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); }
+.room-outcome { margin: 0 0 16px; }
+.room-reveal { margin: 0 0 16px; font-weight: 700; color: var(--room); }
+.room-closing { margin: 0 0 18px; padding: 0 0 0 18px; border-left: 4px solid var(--room); font: 400 1.2em/1.4 var(--serif); }
+.room-notes { margin: 0 0 18px; padding: 12px 16px; border: 1px dashed var(--soft); border-radius: 10px; font-size: 0.78em; color: var(--soft); }
+.room-notes h3 { margin: 0 0 6px; font-size: 1em; }
+.room-notes ul { margin: 0; padding-left: 1.2em; }
+.room-empty { min-height: 1.6em; border: 1px dashed rgba(201, 210, 230, 0.5); border-radius: 8px; }
+.room-live { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.room-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 8px; font-size: 0.72em; }
+.room-foot button { font-size: 1rem; }
+.room-hint { flex: 1; color: var(--soft); min-width: 12em; }
+.room .fresh { animation: room-in 0.9s ease both; }
+@keyframes room-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .room, .room.lit, .room-beat, .room-beats, .room-choice { transition: none; }
+  .room .fresh { animation: none; }
+}

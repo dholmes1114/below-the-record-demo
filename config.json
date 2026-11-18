@@ -1,0 +1,9 @@
+{
+  "flags": {
+    "darkMatter": false,
+    "chartGesture": false,
+    "rooms": false,
+    "playground": false,
+    "atmosphere": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": "dm-noticing",
+      "label": "Noticing a subtle change"
+    },
+    {
+      "id": "dm-family",
+      "label": "Calming a family"
+    },
+    {
+      "id": "dm-not-yet",
+      "label": "A judgment call not to escalate yet"
+    },
+    {
+      "id": "dm-reprioritizing",
+      "label": "Reprioritizing during a staffing shortage"
+    },
+    {
+      "id": "dm-teaching",
+      "label": "Teaching a new grad mid-shift"
+    }
+  ]
+}

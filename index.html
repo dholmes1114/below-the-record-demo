@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Below the Record</title>
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="styles.css">
+  <!-- three.js is kept in this folder (vendor/), so the page works with no internet. -->
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/addons/" } }
+  </script>
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <canvas id="sky" role="img" aria-label="A constellation: the philosophy at the center, with definitions, schools of thought, assumptions and references around it. Use the All stars list or the tour buttons to read each one."></canvas>
+
+  <header class="topbar">
+    <div class="title">
+      <h1 id="site-title">Below the Record</h1>
+      <p id="site-author"></p>
+    </div>
+    <div class="tools" role="toolbar" aria-label="View controls">
+      <button id="btn-index" type="button" aria-expanded="false" aria-controls="index">All stars</button>
+      <button id="btn-text" type="button" aria-label="Text size">A+</button>
+      <button id="btn-home" type="button">Reset view</button>
+      <button id="btn-dark" type="button" aria-pressed="false" hidden></button>
+      <button id="btn-help" type="button" aria-expanded="false" aria-controls="help">Help</button>
+      <button id="btn-vr" type="button" hidden>Enter VR</button>
+    </div>
+  </header>
+
+  <nav id="index" class="drawer" aria-label="All stars" hidden></nav>
+
+  <aside id="panel" class="panel" aria-labelledby="panel-title" hidden>
+    <button id="panel-close" class="close" type="button" aria-label="Close panel (Escape)">✕</button>
+    <div id="panel-body" aria-live="polite" aria-atomic="true"></div>
+  </aside>
+
+  <section id="help" class="help" aria-label="Help" hidden>
+    <h2>How to move around</h2>
+    <dl id="help-keys">
+      <dt>Mouse</dt><dd>Drag to orbit, scroll to zoom, click a star to read it.</dd>
+      <dt><kbd>→</kbd> <kbd>←</kbd></dt><dd>Next and previous tour stop. <kbd>Page Down</kbd> and <kbd>Page Up</kbd> do the same, so a presenter clicker works.</dd>
+      <dt><kbd>Home</kbd> <kbd>End</kbd></dt><dd>First and last tour stop.</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Close the panel.</dd>
+      <dt><kbd>Tab</kbd></dt><dd>Move through the buttons. <strong>All stars</strong> lists every star as a button.</dd>
+      <dt><kbd>L</kbd></dt><dd>Show or hide the names of the references.</dd>
+      <dt><kbd>+</kbd> <kbd>−</kbd></dt><dd>Larger or smaller panel text.</dd>
+      <dt><kbd>U</kbd></dt><dd>Hide or show the buttons, for a clean stage.</dd>
+      <dt><kbd>F</kbd></dt><dd>Full screen.</dd>
+      <dt>In the headset</dt><dd>Point and pull the trigger on a star. <strong>A</strong> or right grip: next stop. <strong>B</strong> or left grip: back. Trigger on empty sky closes the panel.</dd>
+    </dl>
+    <p id="help-course" class="fine"></p>
+    <button id="help-close" type="button">Close</button>
+  </section>
+
+  <footer class="tourbar" aria-label="Guided tour">
+    <button id="tour-prev" type="button" aria-label="Previous tour stop">◀ Back</button>
+    <p id="tour-status">Guided tour: press → to begin</p>
+    <button id="tour-next" type="button" aria-label="Next tour stop">Next ▶</button>
+  </footer>
+
+  <div id="notice" class="notice" role="alert" hidden></div>
+
+  <script>
+    // Opening the file by double-click does not work (browsers block it). Say so plainly instead of a black page.
+    if (location.protocol === 'file:') {
+      var n = document.getElementById('notice');
+      n.hidden = false;
+      n.textContent = 'This page has to be opened through its little local server, not by double-clicking the file. In VS Code: Terminal → Run Task → "Open the constellation".';
+    }
+  </script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

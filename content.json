@@ -1,0 +1,294 @@
+{
+  "meta": {
+    "title": "Below the Record: A Philosophy of Nursing Science",
+    "author": "",
+    "course": "NURSING 708: Big Ideas in Nursing",
+    "institution": "",
+    "date": "2026"
+  },
+  "center": {
+    "id": "philosophy",
+    "label": "My Philosophy of Nursing Science",
+    "chartedAs": "Philosophy of nursing: on file ☑",
+    "text": [
+      "Nursing science should study nursing as it's actually done, not as it's charted or scored.",
+      "That means treating the instrument as part of the question. Whether it's the chart, the NCLEX or a model, I ask what it counts, whose reasoning it treats as the standard, and what disappears.",
+      "Nursing work that doesn't enter the record doesn't exist to any system trained on that record. So nursing science has to make invisible work, and reasoning that works differently, knowable, without turning that knowledge into surveillance."
+    ],
+    "refs": [
+      "allen2015",
+      "carper1978",
+      "chinn2025"
+    ]
+  },
+  "anchors": [
+    {
+      "id": "def-nursing",
+      "label": "Nursing",
+      "chartedAs": "Nursing care: provided ☑",
+      "subtitle": "Scholarly operational definition",
+      "text": "Nursing is the embodied, relational, reasoning work of noticing, interpreting and acting on a person's changing condition. It happens under real limits of staffing and acuity, and much of it never enters the record.",
+      "refs": [
+        "allen2015",
+        "carper1978",
+        "chinn2025"
+      ]
+    },
+    {
+      "id": "def-science",
+      "label": "Science",
+      "chartedAs": "Evidence-based: Yes ☑",
+      "subtitle": "Scholarly operational definition",
+      "text": "Science is systematic, accountable inquiry that makes its claims answerable to evidence. It also names what its instruments, categories and norms can't see.",
+      "refs": [
+        "bhaskar2008",
+        "harding1991",
+        "weaver2006"
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "id": "critical-realism",
+      "label": "Critical Realism",
+      "chartedAs": "Assessment: documented ☑",
+      "distance": 0.2,
+      "alignment": "close",
+      "text": "Reality exists whether or not we measure it, and our instruments only reach part of it. Care is real before it's charted. The record is a partial trace, not the thing itself.",
+      "refs": [
+        "bhaskar2008",
+        "mcevoy2003"
+      ]
+    },
+    {
+      "id": "standpoint",
+      "label": "Standpoint Theory & Black Feminist Thought",
+      "chartedAs": "Demographics: complete ☑",
+      "distance": 0.25,
+      "alignment": "close",
+      "text": "Knowledge comes from somewhere. Who's knowing shapes what gets known. My standpoint as a Black woman and a former bedside nurse is evidence I bring, not bias to scrub out.",
+      "refs": [
+        "collins2000",
+        "harding1991"
+      ]
+    },
+    {
+      "id": "neurodiversity",
+      "label": "Neurodiversity Paradigm",
+      "chartedAs": "Clinical judgment: meets standard ☑",
+      "distance": 0.3,
+      "alignment": "close",
+      "text": "Neurocognitive variation is natural human diversity, not a deficit. Sound clinical judgment can take more than one cognitive shape, and our measures shouldn't treat one shape as the standard.",
+      "refs": [
+        "walker2021",
+        "hedlund2026"
+      ]
+    },
+    {
+      "id": "critical-theory",
+      "label": "Critical Theory: Power & Surveillance",
+      "chartedAs": "Charting compliance: 100% ☑",
+      "distance": 0.5,
+      "alignment": "middle",
+      "text": "Knowledge is never separate from power. Data collected about nurses can be used to govern nurses. Nursing science has to ask who a measure serves.",
+      "refs": [
+        "holmes2002",
+        "dillardwright2024",
+        "walker2025"
+      ]
+    },
+    {
+      "id": "patterns-of-knowing",
+      "label": "Patterns of Knowing",
+      "chartedAs": "Knowledge type: empirical ☑",
+      "distance": 0.55,
+      "alignment": "middle",
+      "text": "Nursing knowledge is plural: empirical, ethical, personal, aesthetic and emancipatory. Empirical traces alone miss most of what a nurse knows.",
+      "refs": [
+        "carper1978",
+        "chinn2025"
+      ]
+    },
+    {
+      "id": "pragmatism",
+      "label": "Pragmatism",
+      "chartedAs": "Intervention: implemented ☑",
+      "distance": 0.75,
+      "alignment": "farther",
+      "text": "Theory and practice aren't separate. Knowledge proves itself in action. This shows up in my instinct to build measurable, usable fixes.",
+      "refs": [
+        "doane2005"
+      ]
+    },
+    {
+      "id": "positivism",
+      "label": "Logical Positivism",
+      "chartedAs": "Measured: Yes ☑",
+      "distance": 0.95,
+      "alignment": "contrast",
+      "text": "The view that only what's observable and measurable counts as knowledge. It's visible in my constellation as the position I push against, because it treats the record as the reality.",
+      "refs": [
+        "weaver2006"
+      ]
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "a1",
+      "label": "Care is real before it's recorded",
+      "chartedAs": "Resp: WNL ☑",
+      "text": "Care is real before it's recorded, and beyond what gets recorded.",
+      "connects": [
+        "philosophy",
+        "critical-realism",
+        "def-nursing"
+      ]
+    },
+    {
+      "id": "a2",
+      "label": "No instrument is neutral",
+      "chartedAs": "Flowsheet: complete ☑",
+      "text": "Every measure builds in a norm, like the flowsheet or the CJMM.",
+      "connects": [
+        "def-science",
+        "critical-realism",
+        "critical-theory"
+      ]
+    },
+    {
+      "id": "a3",
+      "label": "Judgment takes more than one shape",
+      "chartedAs": "Clinical judgment: scored ☑",
+      "text": "Sound judgment can take more than one cognitive shape.",
+      "connects": [
+        "philosophy",
+        "neurodiversity",
+        "def-nursing"
+      ]
+    },
+    {
+      "id": "a4",
+      "label": "Knowers have a standpoint",
+      "chartedAs": "Bias: none noted ☑",
+      "text": "Positionality is evidence, not bias to scrub out.",
+      "connects": [
+        "def-science",
+        "standpoint",
+        "philosophy"
+      ]
+    },
+    {
+      "id": "a5",
+      "label": "Power travels with data",
+      "chartedAs": "Audit: nurse flagged ☑",
+      "text": "Knowledge about nurses can be used against nurses.",
+      "connects": [
+        "philosophy",
+        "critical-theory",
+        "def-science"
+      ]
+    },
+    {
+      "id": "a6",
+      "label": "Nursing knowledge is plural",
+      "chartedAs": "Data type: numeric ☑",
+      "text": "Empirical, ethical, personal, aesthetic and emancipatory.",
+      "connects": [
+        "def-nursing",
+        "patterns-of-knowing",
+        "philosophy"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "allen2015",
+      "apa": "Allen, D. (2015). The invisible work of nurses: Hospitals, organisation and healthcare. Routledge.",
+      "italic": "The invisible work of nurses: Hospitals, organisation and healthcare"
+    },
+    {
+      "id": "bhaskar2008",
+      "apa": "Bhaskar, R. (2008). A realist theory of science. Routledge. (Original work published 1975)",
+      "italic": "A realist theory of science"
+    },
+    {
+      "id": "carper1978",
+      "apa": "Carper, B. A. (1978). Fundamental patterns of knowing in nursing. Advances in Nursing Science, 1(1), 13–23. https://doi.org/10.1097/00012272-197810000-00004",
+      "italic": "Advances in Nursing Science, 1"
+    },
+    {
+      "id": "chinn2025",
+      "apa": "Chinn, P. L., Canty, L., & Mkandawire-Valhmu, L. (2025). Knowledge development in nursing: Theory and process (12th ed.). Elsevier.",
+      "italic": "Knowledge development in nursing: Theory and process"
+    },
+    {
+      "id": "collins2000",
+      "apa": "Collins, P. H. (2000). Black feminist thought: Knowledge, consciousness, and the politics of empowerment (2nd ed.). Routledge.",
+      "italic": "Black feminist thought: Knowledge, consciousness, and the politics of empowerment"
+    },
+    {
+      "id": "dillardwright2024",
+      "apa": "Dillard-Wright, J. (2024). Another nursing is possible: Ethics, political economies, and possibility in an uncertain world. Nursing Philosophy, 25(3), Article e12484. https://doi.org/10.1111/nup.12484",
+      "italic": "Nursing Philosophy, 25"
+    },
+    {
+      "id": "doane2005",
+      "apa": "Hartrick Doane, G., & Varcoe, C. (2005). Toward compassionate action: Pragmatism and the inseparability of theory/practice. Advances in Nursing Science, 28(1), 81–90. https://doi.org/10.1097/00012272-200501000-00009",
+      "italic": "Advances in Nursing Science, 28"
+    },
+    {
+      "id": "harding1991",
+      "apa": "Harding, S. (1991). Whose science? Whose knowledge? Thinking from women's lives. Cornell University Press.",
+      "italic": "Whose science? Whose knowledge? Thinking from women's lives"
+    },
+    {
+      "id": "hedlund2026",
+      "apa": "Hedlund, Å. (2026). The neurodiversity paradigm and the fundamentals of nursing. British Journal of Nursing, 35(4), 200–204. https://doi.org/10.12968/bjon.2025.0076",
+      "italic": "British Journal of Nursing, 35"
+    },
+    {
+      "id": "holmes2002",
+      "apa": "Holmes, D., & Gastaldo, D. (2002). Nursing as means of governmentality. Journal of Advanced Nursing, 38(6), 557–565. https://doi.org/10.1046/j.1365-2648.2002.02222.x",
+      "italic": "Journal of Advanced Nursing, 38"
+    },
+    {
+      "id": "mcevoy2003",
+      "apa": "McEvoy, P., & Richards, D. (2003). Critical realism: A way forward for evaluation research in nursing? Journal of Advanced Nursing, 43(4), 411–420. https://doi.org/10.1046/j.1365-2648.2003.02730.x",
+      "italic": "Journal of Advanced Nursing, 43"
+    },
+    {
+      "id": "walker2021",
+      "apa": "Walker, N. (2021). Neuroqueer heresies: Notes on the neurodiversity paradigm, autistic empowerment, and postnormal possibilities. Autonomous Press.",
+      "italic": "Neuroqueer heresies: Notes on the neurodiversity paradigm, autistic empowerment, and postnormal possibilities"
+    },
+    {
+      "id": "walker2025",
+      "apa": "Walker, R. R., Dillard-Wright, J., Karkar, R., Chung, J., Molony, J., & Gatrall, C. E. (2025). Health Tech for the People (HT4P): A transdisciplinary research initiative focused on artificial intelligence tech ethics and design for health justice. Nursing Outlook, 73(6), Article 102546. https://doi.org/10.1016/j.outlook.2025.102546",
+      "italic": "Nursing Outlook, 73"
+    },
+    {
+      "id": "weaver2006",
+      "apa": "Weaver, K., & Olson, J. K. (2006). Understanding paradigms used for nursing research. Journal of Advanced Nursing, 53(4), 459–469. https://doi.org/10.1111/j.1365-2648.2006.03740.x",
+      "italic": "Journal of Advanced Nursing, 53"
+    }
+  ],
+  "tour": [
+    "philosophy",
+    "def-nursing",
+    "def-science",
+    "critical-realism",
+    "a1",
+    "standpoint",
+    "a4",
+    "neurodiversity",
+    "a3",
+    "critical-theory",
+    "a2",
+    "a5",
+    "patterns-of-knowing",
+    "a6",
+    "pragmatism",
+    "positivism",
+    "philosophy"
+  ]
+}

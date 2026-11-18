@@ -1,0 +1,76 @@
+{
+  "kicker": {
+    "center": "Center star",
+    "anchor": "Definition",
+    "cluster": "School of thought · {alignment}",
+    "assumption": "Assumption",
+    "reference": "Reference"
+  },
+  "panel": {
+    "connects": "This line connects",
+    "assumptions": "Assumptions through this star",
+    "citedBy": "Cited by",
+    "sources": "Sources",
+    "showReference": "Show this reference star"
+  },
+  "board": {
+    "connects": "Connects",
+    "citedBy": "Cited by",
+    "sources": "Sources"
+  },
+  "index": {
+    "center": "The center",
+    "anchors": "Definitions",
+    "clusters": "Schools of thought",
+    "assumptions": "Assumptions",
+    "references": "References"
+  },
+  "tour": {
+    "begin": "Guided tour: press → to begin",
+    "step": "{n} of {total}",
+    "paused": "paused · → continues"
+  },
+  "rooms": {
+    "stepInside": "Step inside",
+    "stepInsideNamed": "Step inside: {title}",
+    "kicker": "Inside · {star}",
+    "chose": "The class chose {key}",
+    "next": "Next",
+    "back": "Back",
+    "leave": "Back to the sky",
+    "hint": "→ next   ·   {keys} to choose   ·   Esc back to the sky",
+    "waiting": "The class decides.",
+    "notWritten": "This room is not written yet. Notes for writing it:",
+    "help": "Step inside: when a star has a room, its panel shows a Step inside button (or press Enter). Inside, → shows the next line, the class chooses with A, B or C, and Esc returns to the sky.",
+    "vrEnter": "Step inside (pull the trigger here)",
+    "vrHint": "Trigger or A: next   ·   Point at a choice and pull the trigger   ·   B: back",
+    "vrLeave": "Back to the sky"
+  },
+  "chart": {
+    "button": "Chart it",
+    "confirm": "Now chart it",
+    "restore": "Restore it",
+    "before": "As it is",
+    "after": "As the record shows it",
+    "help": "Chart it: click a star and hold for two seconds, and it drains into a checkbox. Let go early and it springs back. Double-click a charted star to restore it. For the open star, C (or the Chart it button) goes in steps: first it shows the star as it is, the next press charts it, and the record's line appears once it is a checkbox. In the headset, squeeze the grip on a star, or pinch and hold with a bare hand.",
+    "vrHint": "Grip on a star: chart it"
+  },
+  "dark": {
+    "button": "Dark matter",
+    "index": "Unrecorded care",
+    "help": "Show or hide dark matter: the nursing work that never enters the record. Point at a patch to read it. In the headset, push the thumbstick up.",
+    "vrHint": "Stick up: dark matter"
+  },
+  "vr": {
+    "enter": "Enter VR",
+    "exit": "Exit VR",
+    "unavailable": "VR not available here",
+    "noHeadset": "This browser has no headset attached. Open this page in the Meta Quest Browser to enter VR.",
+    "notSecure": "VR needs a secure address (https, or localhost). See the README section \"Getting it onto the Quest\".",
+    "welcomeKicker": "Welcome",
+    "welcomeTitle": "Constellation",
+    "welcome": "Point a controller at a star and pull the trigger to read it. Press A to start the guided tour.",
+    "footerStart": "Trigger: choose a star   ·   A: start the tour   ·   Trigger on empty sky: close",
+    "footerStep": "Stop {n} of {total}   ·   A: next   ·   B: back   ·   Trigger on empty sky: close"
+  }
+}
